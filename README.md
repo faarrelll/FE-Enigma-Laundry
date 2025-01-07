@@ -1,50 +1,33 @@
-# React + TypeScript + Vite
+# Rules
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Commit Message Convention
 
-Currently, two official plugins are available:
+- Jika menambahkan sebuah fungsi gunakan prefix `feat` contoh menambahkan fungsi login `feat:create login funcion` atau `feat: create login page`
+- Jika melakukan perbaikan atau refactor gunakan prefix `fix` contoh fix typo `fix: typo`
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Branch Naming
 
-## Expanding the ESLint configuration
+- Setiap branch harus diawali dengan nama `dev` contoh branch untuk dashboard `dev-dashboard`
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Feature Development
 
-- Configure the top-level `parserOptions` property like this:
+- Setiap fitur dibuat branch baru
+- Setiap membuat fitur baru biasakan pull dari branch `dev` dulu
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Job Desk
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+- Stefanus -
+- Farel -
+- Ayyik -
+- Zhidani -
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Feature List
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- Dashboard
+- Login
+- Product
+- Customer
+
+## UI Reference
+
+- https://www.behance.net/gallery/215551135/Laundry-Service-Landing-Page
