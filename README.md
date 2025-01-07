@@ -16,6 +16,7 @@
 
 ## Job Desk
 
+- Adi - free
 - Stefanus -
 - Farel -
 - Ayyik -
@@ -24,10 +25,11 @@
 ## Feature List
 
 - Dashboard
-- Login
+- Authentication
 - Product
 - Customer
+- Order
 
 ## UI Reference
 
-- https://www.behance.net/gallery/215551135/Laundry-Service-Landing-Page
+- https://www.behance.net/gallery/207311011/Dashboard-Website-Design-E-commerce-(Case-Study)?tracking_source=search_projects|dashboard+admin+design+website&l=2
