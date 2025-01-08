@@ -42,19 +42,19 @@ const ListProduct = ({
         <table className="w-full table-auto">
           <thead>
             <tr className="bg-gray-50">
-              <th className="px-6 py-4 text-left text-3xl font-bold text-primary-500">
+              <th className="px-6 py-4 text-left text-lg font-bold text-primary-500">
                 ID
               </th>
-              <th className="px-6 py-4 text-left text-3xl font-bold text-primary-500">
+              <th className="px-6 py-4 text-left text-lg font-bold text-primary-500">
                 Name
               </th>
-              <th className="px-6 py-4 text-left text-3xl font-bold text-primary-500">
+              <th className="px-6 py-4 text-left text-lg font-bold text-primary-500">
                 Price
               </th>
-              <th className="px-6 py-4 text-left text-3xl font-bold text-primary-500">
+              <th className="px-6 py-4 text-left text-lg font-bold text-primary-500">
                 Type
               </th>
-              <th className="px-6 py-4 text-left text-3xl font-bold text-primary-500">
+              <th className="px-6 py-4 text-left text-lg font-bold text-primary-500">
                 Actions
               </th>
             </tr>
@@ -66,23 +66,23 @@ const ListProduct = ({
                   key={product.id}
                   className="border-t border-gray-100 hover:bg-gray-50 transition-colors"
                 >
-                  <td className="px-6 py-4 text-3xl text-gray-800">
+                  <td className="px-6 py-4 text-lg text-gray-800">
                     {product.id}
                   </td>
-                  <td className="px-6 py-4 text-3xl text-gray-800">
+                  <td className="px-6 py-4 text-lg text-gray-800">
                     {product.name}
                   </td>
-                  <td className="px-6 py-4 text-3xl text-gray-800">
+                  <td className="px-6 py-4 text-lg text-gray-800">
                     Rp {product.price}
                   </td>
-                  <td className="px-6 py-4 text-3xl text-gray-800">
+                  <td className="px-6 py-4 text-lg text-gray-800">
                     {product.type}
                   </td>
                   <td className="px-6 py-4">
                     <div className="flex items-center space-x-4">
                       <button
                         onClick={() => handleUpdate(product.id)}
-                        className="h-10 flex items-center justify-center  bg-primary-500 text-white hover:bg-primary-600 transition-colors text-2xl px-2 rounded"
+                        className="h-10 flex items-center justify-center  bg-primary-500 text-white hover:bg-primary-600 transition-colors text-lg px-2 rounded"
                         data-testid={`edit-product-button-${splitUUID(
                           product.id
                         )}`}
@@ -95,7 +95,7 @@ const ListProduct = ({
                           setSelectedId(product.id);
                           setIsOpen(true);
                         }}
-                        className="h-10 flex items-center justify-center  bg-primary-500 text-white hover:bg-primary-600 transition-colors text-2xl px-2 rounded"
+                        className="h-10 flex items-center justify-center  bg-primary-500 text-white hover:bg-primary-600 transition-colors text-lg px-2 rounded"
                         data-testid={`delete-product-button-${splitUUID(
                           product.id
                         )}`}
