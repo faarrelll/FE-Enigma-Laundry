@@ -75,7 +75,7 @@ export default function EditCustomer() {
 
     return (
         <div className="w-full h-[80vh] flex justify-center items-center flex-col">
-            <h1 className='text-3xl font-bold mb-10 text-secondary-800'>Create Customer</h1>
+            <h1 className='text-3xl font-bold mb-10 text-secondary-800'>Edit Customer</h1>
 
             <div className="bg-white p-5 rounded-lg">
                 <form onSubmit={handleSubmit(handleSubmitForm)} className='flex flex-col gap-5'>

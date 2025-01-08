@@ -68,7 +68,7 @@ export default function CreateCustomer() {
                         <Button variant='danger' onClick={() => navigate('/customers')}>Back</Button>
                         <div className='flex justify-end gap-2'>
                             <Button variant='secondary' onClick={handleClear}>Clear</Button>
-                            <Button onClick={() => handleSubmitForm}>Submit</Button>
+                            <Button buttonType='submit'>Submit</Button>
                         </div>
                     </div>
                 </form>
