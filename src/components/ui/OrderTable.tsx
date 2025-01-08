@@ -26,7 +26,7 @@ export default function OrderTable() {
         <tr className="bg-gray-100">
           <th className="px-4 py-2 border border-gray-200">ID</th>
           <th className="px-4 py-2 border border-gray-200">Customer Name</th>
-          <th className="px-4 py-2 border border-gray-200">Amount</th>
+          <th className="px-4 py-2 border border-gray-200">Product</th>
           <th className="px-4 py-2 border border-gray-200">Date</th>
           <th className="px-4 py-2 border border-gray-200 text-center">
             Action
