@@ -1,8 +1,12 @@
+import Sidebar from "./components/layouts/Sidebar";
+import DashboardPage from "./pages/DashboardPage";
+
 function App() {
   return (
-    <div className="text-center text-red-500 underline text-xl">
-      <h1>Hello</h1>
-    </div>
+    <>
+      <Sidebar />
+      <DashboardPage />
+    </>
   );
 }
 
