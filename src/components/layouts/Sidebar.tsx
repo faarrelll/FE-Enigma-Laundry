@@ -1,4 +1,10 @@
-import { Home, ShoppingBag, Users, UserCircle, BringToFront } from "lucide-react";
+import {
+  Home,
+  ShoppingBag,
+  Users,
+  UserCircle,
+  BringToFront,
+} from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 
 function Sidebar() {
@@ -11,7 +17,9 @@ function Sidebar() {
     <aside className="w-56 h-screen fixed top-0 left-0 bg-white border-r shadow-sm flex flex-col">
       {/* Header */}
       <div className="p-4">
-        <h1 className="text-2xl font-bold tracking-wide text-primary-500 mx-6">Laundry</h1>
+        <h1 className="text-2xl font-bold tracking-wide text-primary-500 mx-6">
+          Laundry
+        </h1>
       </div>
 
       {/* Navigation */}
@@ -80,7 +88,7 @@ function Sidebar() {
             <UserCircle className="w-5 h-5 mr-3" />
             User
           </Link>
-        </li> 
+        </li>
       </ul>
 
       {/* User Login Section */}

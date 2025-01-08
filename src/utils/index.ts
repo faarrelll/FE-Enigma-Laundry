@@ -11,3 +11,7 @@ export const convertCustomerToSelectOption = (customers: customer[]) => {
     label: customer.name,
   }));
 };
+
+export const splitUUID = (uuid: string) => {
+  return uuid.split("-")[0];
+};
