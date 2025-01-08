@@ -8,6 +8,7 @@ import CreateOrder from "./pages/Order/CreateOrder";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import { Toaster } from "react-hot-toast";
+import DetailOrder from "./pages/Order/DetailOrder";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/customers" element={<Customer />} />
           <Route path="/orders" element={<Order />} />
           <Route path="/orders/create" element={<CreateOrder />} />
+          <Route path="/orders/:id" element={<DetailOrder />} />
         </Route>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />

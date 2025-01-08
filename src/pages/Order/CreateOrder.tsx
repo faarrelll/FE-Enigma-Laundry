@@ -3,7 +3,6 @@ import axiosInstance from "../../api/axiosInstance";
 import { useEffect, useState } from "react";
 import { convertCustomerToSelectOption } from "../../utils";
 import { product } from "../../types";
-import axios from "axios";
 import toast from "react-hot-toast";
 
 type option = {

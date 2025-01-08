@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axiosInstance from "../../api/axiosInstance";
 import { order } from "../../types";
+import { useNavigate } from "react-router";
 
 const fetchOrders = async (
   setter: React.Dispatch<React.SetStateAction<order[]>>
@@ -15,6 +16,7 @@ const fetchOrders = async (
 
 export default function OrderTable() {
   const [orders, setOrders] = useState<order[]>([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchOrders(setOrders);
@@ -45,11 +47,11 @@ export default function OrderTable() {
                 {order.billDetails[0].product.name}
               </td>
               <td className="px-4 py-2 border border-gray-200">
-                {order.billDate}
+                {new Date(order.billDate as string).toLocaleString()}
               </td>
               <td className="px-4 py-2 border border-gray-200 text-center">
                 <button
-                  onClick={() => {}}
+                  onClick={() => navigate(`/orders/${order.id}`)}
                   className="px-4 py-2 bg-primary-500 text-white rounded-md shadow-md hover:bg-primary-600"
                 >
                   Detail
