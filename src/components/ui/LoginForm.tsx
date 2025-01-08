@@ -1,14 +1,16 @@
 import React from "react";
-import padlock from "../../assets/authentication/padlock.png";
-import email from "../../assets/authentication/email.png";
 import AuthApi from "../../api/AuthApi";
+import { useNavigate } from "react-router";
+import authenticationImage from "../../assets/authentication/index"
+import { ToastUtils } from "../../utils/ToastUtils";
 
 interface LoginProps {
   setActivePage: (page: string) => void; 
 }
 
 export const LoginForm: React.FC<LoginProps> = ({ setActivePage }) => {
-  
+  const navigate = useNavigate();
+
   const loginHandle = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const username = (e.target as HTMLFormElement).username.value;
@@ -16,11 +18,14 @@ export const LoginForm: React.FC<LoginProps> = ({ setActivePage }) => {
     try {
       const response = await AuthApi.login(username, password);
       console.log(response);
+      navigate("/");
+      ToastUtils({ message: "Login Success", type: "success" })();
     } catch (error) {
       console.error(error);
+      ToastUtils({ message: "Login Failed", type: "error" })();
     }
   }
-  
+
   return (
     <div className="bg-[#f5fff6] w-full h-full rounded-r-2xl flex flex-col p-5 justify-center items-center  ">
       <div className="flex justify-end items-center"></div>
@@ -30,7 +35,7 @@ export const LoginForm: React.FC<LoginProps> = ({ setActivePage }) => {
         <form onSubmit={loginHandle} className="flex flex-col gap-4">
           <div className="flex flex-row gap-1 items-center bg-white pl-4 rounded-lg">
             <div className="w-4 h-4  flex justify-center items-center">
-              <img src={email} alt="" className="h-full w-full object-fill" />
+              <img src={authenticationImage.email} alt="" className="h-full w-full object-fill" />
             </div>
             <input
               type="text"
@@ -42,7 +47,7 @@ export const LoginForm: React.FC<LoginProps> = ({ setActivePage }) => {
           </div>
           <div className="flex flex-row gap-1 items-center bg-white pl-4 rounded-lg">
             <div className="w-4 h-4  flex justify-center items-center">
-              <img src={padlock} alt="" className="h-full w-full object-fill" />
+              <img src={authenticationImage.padlock} alt="" className="h-full w-full object-fill" />
             </div>
             <input
               type="password"
@@ -59,7 +64,7 @@ export const LoginForm: React.FC<LoginProps> = ({ setActivePage }) => {
             Tidak punya akun?{" "}
             <span
               className="cursor-pointer font-bold"
-              onClick={() => setActivePage && setActivePage("register")}
+              onClick={() => setActivePage("register")}
             >
               Register
             </span>

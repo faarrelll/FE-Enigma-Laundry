@@ -33,6 +33,13 @@ const AuthApi = {
       throw error;
     }
   },
+  logout: () => {
+    try {
+      localStorage.removeItem("token");
+    } catch (error) {
+      throw error;
+    }
+  },
 };
 
 export default AuthApi;
