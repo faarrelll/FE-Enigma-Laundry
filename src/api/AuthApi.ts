@@ -36,6 +36,9 @@ const AuthApi = {
   logout: () => {
     try {
       localStorage.removeItem("token");
+      setTimeout(() => {
+        window.location.reload();
+      }, 1000);
     } catch (error) {
       throw error;
     }

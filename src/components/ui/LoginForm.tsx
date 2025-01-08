@@ -64,7 +64,7 @@ export const LoginForm: React.FC<LoginProps> = ({ setActivePage }) => {
               type="password"
               name="password"
               id="password"
-              data-test-id="password-input"
+              data-testid="password-input"
               placeholder="password"
               className="w-full h-10 rounded-lg p-3 outline-none"
             />
