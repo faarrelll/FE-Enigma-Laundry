@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.customer-select__control--is-focused,
+.customer-select__control,
+.customer-select__control--menu-is-open {
+  @apply border-primary-500 shadow-none ring-primary-500 outline-primary-500 !important;
+}
