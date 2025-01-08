@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import logo from "../assets/authentication/logo-2.png";
 
-import { LoginPage } from "./LoginPage";
-import { RegisterPage } from "./RegisterPage";
+import { LoginForm } from "../components/ui/LoginForm";
+import { RegisterForm } from "../components/ui/RegisterForm";
 
 const AuthPage = () => {
-  const [activeRole, setActiveRole] = useState("employee");
   const [activePage, setActivePage] = useState("login");
   return (
     <div className="flex flex-col justify-center items-center h-screen bg-white">
@@ -20,9 +19,9 @@ const AuthPage = () => {
           </div>
         </div>
         {activePage === "login" ? (
-          <LoginPage activeRole={activeRole} setActiveRole={setActiveRole}  setActivePage={setActivePage}/>
+          <LoginForm setActivePage={setActivePage}/>
         ) : (
-          <RegisterPage activeRole={activeRole} setActiveRole={setActiveRole} setActivePage={setActivePage}/>
+          <RegisterForm setActivePage={setActivePage}/>
         )}
       </div>
     </div>
