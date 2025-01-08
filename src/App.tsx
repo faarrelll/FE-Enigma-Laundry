@@ -4,6 +4,7 @@ import Dashboard from "./pages/Dashboard";
 import Product from "./pages/Product";
 import Customer from "./pages/Customer";
 import Order from "./pages/Order";
+import CreateOrder from "./pages/Order/CreateOrder";
 import AuthPage from "./pages/AuthPage";
 import { PublicRoute } from "./components/ui/AuthRoute";
 

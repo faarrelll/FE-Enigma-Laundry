@@ -30,7 +30,7 @@ export type order = {
   billDetails: {
     id: string;
     product: product;
-    quantity: number;
+    qty: number;
     price: number;
   }[];
 };
