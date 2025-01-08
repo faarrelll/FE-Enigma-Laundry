@@ -6,6 +6,7 @@ import Customer from '../../interface/customer.interface'
 import Button from '../../components/ui/Button'
 import { useNavigate } from 'react-router'
 import { CustomerApi } from '../../api/CustomerApi'
+import { ToastContainer, toast } from 'react-toastify';
 
 const schema = z.object({
     name: z.string().min(5),
@@ -31,8 +32,21 @@ export default function CreateCustomer() {
         try {
             const response = await CustomerApi.create(data)
             if(response) {
-                await alert('oke')
-                navigate('/customers')
+                toast.success('Success create New Customer', {onClose: () => {
+                    clearTimeout(show)
+                    navigate('/customers')
+                }, hideProgressBar: true})
+                const show = setTimeout(() => {
+                    navigate('/customers')
+                }, 1500);
+            } else {
+                toast.error('Failed create New Customer', {onClose: () => {
+                    clearTimeout(show)
+                    navigate('/customers')
+                }, hideProgressBar: true})
+                const show = setTimeout(() => {
+                    navigate('/customers')
+                }, 1500);
             }
         } catch(error) {
             alert(error)
@@ -73,6 +87,7 @@ export default function CreateCustomer() {
                     </div>
                 </form>
             </div>
+            <ToastContainer closeOnClick/>
         </div>
     )
 }

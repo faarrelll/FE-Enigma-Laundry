@@ -7,6 +7,7 @@ import Button from '../../components/ui/Button'
 import { useNavigate, useParams } from 'react-router'
 import { CustomerApi } from '../../api/CustomerApi'
 import { useEffect, useState } from 'react'
+import { toast, ToastContainer } from 'react-toastify'
 
 type Params = {
     id: string;
@@ -40,8 +41,21 @@ export default function EditCustomer() {
         try {
             const response = await CustomerApi.update(data)
             if(response) {
-                await alert('oke')
-                navigate('/customers')
+                toast.success('Success update Customer', {onClose: () => {
+                    clearTimeout(show)
+                    navigate('/customers')
+                }, hideProgressBar: true})
+                const show = setTimeout(() => {
+                    navigate('/customers')
+                }, 1500);
+            } else {
+                toast.error('Failed update Customer', {onClose: () => {
+                    clearTimeout(show)
+                    navigate('/customers')
+                }, hideProgressBar: true})
+                const show = setTimeout(() => {
+                    navigate('/customers')
+                }, 1500);
             }
         } catch(error) {
             alert(error)
@@ -102,6 +116,7 @@ export default function EditCustomer() {
                     </div>
                 </form>
             </div>
+            <ToastContainer closeOnClick/>
         </div>
     )
 }

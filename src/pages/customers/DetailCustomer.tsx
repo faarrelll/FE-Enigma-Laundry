@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router"
 import Customer from "../../interface/customer.interface";
 import { CustomerApi } from "../../api/CustomerApi";
 import Button from "../../components/ui/Button";
+import { toast, ToastContainer } from "react-toastify";
 
 type Params = {
     id: string;
@@ -27,8 +28,21 @@ export default function DetailCustomer() {
             const response = await CustomerApi.delete(id)
 
             if(response) {
-                alert('oke')
-                navigate('/customers')
+                toast.success('Success delete Customer', {onClose: () => {
+                    clearTimeout(show)
+                    navigate('/customers')
+                }, hideProgressBar: true})
+                const show = setTimeout(() => {
+                    navigate('/customers')
+                }, 1000);
+            } else {
+                toast.error('Failed delete Customer', {onClose: () => {
+                    clearTimeout(show)
+                    navigate('/customers')
+                }, hideProgressBar: true})
+                const show = setTimeout(() => {
+                    navigate('/customers')
+                }, 1000);
             }
         } catch (error) {
             alert(error)
@@ -67,6 +81,7 @@ export default function DetailCustomer() {
                     <Button variant="danger" onClick={() => handleDelete(params.id || '')}>Delete</Button>
                 </div>
             </div>
+            <ToastContainer closeOnClick/>
         </div>
     )
 }
