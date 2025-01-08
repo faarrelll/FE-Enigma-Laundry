@@ -29,7 +29,7 @@ export const LoginForm: React.FC<LoginProps> = ({ setActivePage }) => {
   return (
     <div className="bg-[#f5fff6] w-full h-full rounded-r-2xl flex flex-col p-5 justify-center items-center  ">
       <div className="flex justify-end items-center"></div>
-      <h2 className="font-bold text-xl mt-5 mb-3">Welcome Back!</h2>
+      <h2 className="font-bold text-xl mt-5 mb-3" data-test-id="">Welcome Back!</h2>
       <p className="text-slate-500 mb-3">Enter your username and password</p>
       <div>
         <form onSubmit={loginHandle} className="flex flex-col gap-4">
