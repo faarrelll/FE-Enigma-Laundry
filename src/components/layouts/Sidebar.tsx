@@ -1,6 +1,12 @@
-import { Home, ShoppingBag, Users, UserCircle } from "lucide-react";
+import { Home, ShoppingBag, Users, UserCircle, BringToFront } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 
 function Sidebar() {
+  const location = useLocation();
+
+  // Helper function to check if the link is active
+  const isActive = (path: string) => location.pathname === path;
+
   return (
     <aside className="w-56 h-screen fixed top-0 left-0 bg-white border-r shadow-sm flex flex-col">
       {/* Header */}
@@ -11,31 +17,56 @@ function Sidebar() {
       {/* Navigation */}
       <ul className="mt-6 space-y-2 mx-6 flex-grow">
         <li>
-          <a
-            href="#"
-            className="flex items-center px-4 py-2 text-sm font-medium transition-colors duration-200 text-secondary-700 hover:text-primary-500 hover:bg-primary-100"
+          <Link
+            to="/"
+            className={`relative flex items-center px-4 py-2 text-sm font-medium transition-colors duration-200 ${
+              isActive("/")
+                ? "bg-gray-100 text-primary-500 border-l-4 border-primary-500"
+                : "text-secondary-700 hover:text-primary-500 hover:bg-gray-100"
+            }`}
           >
             <Home className="w-5 h-5 mr-3" />
             Dashboard
-          </a>
+          </Link>
         </li>
         <li>
-          <a
-            href="#"
-            className="flex items-center px-4 py-2 text-sm font-medium transition-colors duration-200 text-secondary-700 hover:text-primary-500 hover:bg-primary-100"
+          <Link
+            to="/products"
+            className={`relative flex items-center px-4 py-2 text-sm font-medium transition-colors duration-200 ${
+              isActive("/products")
+                ? "bg-gray-100 text-primary-500 border-l-4 border-primary-500"
+                : "text-secondary-700 hover:text-primary-500 hover:bg-gray-100"
+            }`}
           >
             <ShoppingBag className="w-5 h-5 mr-3" />
             Product
-          </a>
+          </Link>
         </li>
         <li>
-          <a
-            href="#"
-            className="flex items-center px-4 py-2 text-sm font-medium transition-colors duration-200 text-secondary-700 hover:text-primary-500 hover:bg-primary-100"
+          <Link
+            to="/customers"
+            className={`relative flex items-center px-4 py-2 text-sm font-medium transition-colors duration-200 ${
+              isActive("/customers")
+                ? "bg-gray-100 text-primary-500 border-l-4 border-primary-500"
+                : "text-secondary-700 hover:text-primary-500 hover:bg-gray-100"
+            }`}
           >
             <Users className="w-5 h-5 mr-3" />
             Customer
-          </a>
+          </Link>
+        </li>
+        <li>
+          <Link
+            to="/orders"
+            className={`relative flex items-center px-4 py-2 text-sm font-medium transition-colors duration-200 ${
+              isActive("/orders")
+                ? "bg-gray-100 text-primary-500 border-l-4 border-primary-500"
+                : "text-secondary-700 hover:text-primary-500 hover:bg-gray-100"
+            }`}
+          >
+            <BringToFront className="w-5 h-5 mr-3" />
+            Order
+          </Link>
         </li>
       </ul>
 
