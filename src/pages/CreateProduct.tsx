@@ -54,6 +54,7 @@ const CreateProduct = () => {
                                     onChange={handleChange}
                                     className="w-full px-4 py-3 text-lg border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all"
                                     placeholder="Enter product name"
+                                    data-testid="product-name-input"
                                 />
                             </div>
 
@@ -73,6 +74,7 @@ const CreateProduct = () => {
                                     onChange={handleChange}
                                     className="w-full px-4 py-3 text-lg border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all"
                                     placeholder="Enter price"
+                                    data-testid="product-price-input"
                                 />
                             </div>
 
@@ -92,6 +94,7 @@ const CreateProduct = () => {
                                     onChange={handleChange}
                                     className="w-full px-4 py-3 text-lg border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all"
                                     placeholder="Enter product type"
+                                    data-testid="product-type-input"
                                 />
                             </div>
                         </div>
@@ -100,6 +103,7 @@ const CreateProduct = () => {
                             <button
                                 type="submit"
                                 className="flex-1 bg-primary-500 text-white text-xl py-3 px-6 rounded-lg hover:bg-primary-600 transition-colors duration-200"
+                                data-testid="add-product-button"
                             >
                                 Create Product
                             </button>
@@ -107,6 +111,7 @@ const CreateProduct = () => {
                                 type="button"
                                 onClick={() => navigate("/products")}
                                 className="flex-1 bg-gray-100 text-gray-700 text-xl py-3 px-6 rounded-lg hover:bg-gray-200 transition-colors duration-200"
+                                data-testid="close-add-product-modal"
                             >
                                 Cancel
                             </button>

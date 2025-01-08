@@ -15,6 +15,7 @@ const CreateButton = () => {
         <button
             className="w-32 h-10 bg-primary-500 text-white rounded-md"
             onClick={handleCreate}
+            data-testid="add-product-modal"
         >
             Create
         </button>
