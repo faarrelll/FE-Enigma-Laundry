@@ -108,6 +108,7 @@ const ListProduct = () => {
                                             <button 
                                                 onClick={() => handleDelete(product.id)}
                                                 className="h-10 flex items-center justify-center  bg-primary-500 text-white hover:bg-primary-600 transition-colors text-2xl px-2 rounded"
+                                                data-testid="delete-product-button-${productId}"
                                             >
                                                 Delete
                                             </button>
