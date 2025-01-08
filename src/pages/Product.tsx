@@ -10,35 +10,37 @@ export default function Product() {
   const [selectedId, setSelectedId] = useState<string | null>(null);
 
   return (
-    <div className="ml-56 flex min-h-screen bg-secondary-500 gap-5 flex-col">
-      <div className="bg-white ml-4 mt-4 flex gap-4 flex-col">
-        <Modal
-          isOpen={isOpen}
-          setIsOpen={setIsOpen}
-          selectedId={selectedId}
-          setProducts={setProducts}
-        />
-        <div className="ml-4 mt-4">
-          <h1
-            className="text-3xl font-bold text-primary-500"
-            data-testid="product-title"
-          >
-            Product
-          </h1>
-        </div>
-        <div className="ml-4 flex gap-2">
-          <CreateButton />
-          <DeleteButton />
-        </div>
-        <div className="ml-4 ">
-          <ListProduct
-            setIsOpen={setIsOpen}
-            setSelectedId={setSelectedId}
-            products={products}
-            setProducts={setProducts}
-          />
+    <>
+      <div className="ml-56 flex min-h-screen bg-secondary-500 gap-5 flex-col">
+        <div className="bg-white ml-4 mt-4 flex gap-4 flex-col">
+          <div className="ml-4 mt-4">
+            <h1
+              className="text-3xl font-bold text-primary-500"
+              data-testid="product-title"
+            >
+              Product
+            </h1>
+          </div>
+          <div className="ml-4 flex gap-2">
+            <CreateButton />
+            <DeleteButton />
+          </div>
+          <div className="ml-4 ">
+            <ListProduct
+              setIsOpen={setIsOpen}
+              setSelectedId={setSelectedId}
+              products={products}
+              setProducts={setProducts}
+            />
+          </div>
         </div>
       </div>
-    </div>
+      <Modal
+        isOpen={isOpen}
+        setIsOpen={setIsOpen}
+        selectedId={selectedId}
+        setProducts={setProducts}
+      />
+    </>
   );
 }

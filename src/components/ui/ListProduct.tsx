@@ -110,7 +110,7 @@ const ListProduct = ({
               <tr>
                 <td
                   colSpan={4}
-                  className="px-6 py-8 text-center text-3xl text-gray-500 bg-gray-50"
+                  className="px-6 py-8 text-center text-xl text-gray-500 bg-gray-50"
                 >
                   No products found.
                 </td>
