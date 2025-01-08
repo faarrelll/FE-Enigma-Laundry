@@ -1,5 +1,5 @@
 import React from 'react'
-import { AuthChecker } from '../../utils/AuthChecker.util'
+import { AuthChecker } from '../../utils/AuthChecker'
 import { Navigate } from 'react-router'
 
 
