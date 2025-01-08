@@ -1,3 +1,4 @@
+
 import { Routes, Route } from "react-router";
 import Layout from "./components/layouts/Layout";
 import Dashboard from "./pages/Dashboard";
@@ -5,8 +6,7 @@ import Product from "./pages/Product";
 import Customer from "./pages/Customer";
 import Order from "./pages/Order";
 import CreateOrder from "./pages/Order/CreateOrder";
-import Login from "./pages/Login";
-import Register from "./pages/Register";
+import AuthPage from "./pages/AuthPage";
 import { Toaster } from "react-hot-toast";
 import DetailOrder from "./pages/Order/DetailOrder";
 
@@ -23,8 +23,6 @@ function App() {
           <Route path="/orders/create" element={<CreateOrder />} />
           <Route path="/orders/:id" element={<DetailOrder />} />
         </Route>
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
       </Routes>
     </>
   );
