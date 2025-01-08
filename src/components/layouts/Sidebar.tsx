@@ -11,9 +11,10 @@ import { getUserId } from "../../utils/JwtDecode";
 import axiosInstance from "../../api/axiosInstance";
 import { useState, useEffect } from "react";
 import AuthApi from "../../api/AuthApi";
-import {ToastUtils} from "../../utils/ToastUtils";
+import { ToastUtils } from "../../utils/ToastUtils";
+
 function Sidebar() {
-  const [profile, setProfile] = useState<{ name?: string; email?: string }>({});
+  const [profile, setProfile] = useState<{ name?: string; email?: string, role?: string }>({});
   const location = useLocation();
 
   // Helper function to check if the link is active
@@ -21,10 +22,10 @@ function Sidebar() {
 
   useEffect(() => {
     const fetchUserProfile = async () => {
-      const userId = getUserId();
-      if (userId) {
+      const decode = getUserId();
+      if (decode) {
         try {
-          const response = await axiosInstance.get(`/users/${userId.userId}`);
+          const response = await axiosInstance.get(`/users/${decode.userId}`);
           setProfile(response.data.data);
           console.log(response.data.data);
         } catch (error) {
@@ -105,17 +106,21 @@ function Sidebar() {
           </Link>
         </li>
         <li>
-          <Link
-            to="/users"
-            className={`relative flex items-center px-4 py-2 text-sm font-medium transition-colors duration-200 ${
-              isActive("/users")
-                ? "bg-gray-100 text-primary-500 border-l-4 border-primary-500"
-                : "text-secondary-700 hover:text-primary-500 hover:bg-gray-100"
-            }`}
-          >
-            <UserCircle className="w-5 h-5 mr-3" />
-            User
-          </Link>
+          {profile.role === "admin" ? (
+            <Link
+              to="/users"
+              className={`relative flex items-center px-4 py-2 text-sm font-medium transition-colors duration-200 ${
+                isActive("/users")
+                  ? "bg-gray-100 text-primary-500 border-l-4 border-primary-500"
+                  : "text-secondary-700 hover:text-primary-500 hover:bg-gray-100"
+              }`}
+            >
+              <UserCircle className="w-5 h-5 mr-3" />
+              User
+            </Link>
+          ) : (
+            <div></div>
+          )}
         </li>
       </ul>
 
@@ -123,10 +128,17 @@ function Sidebar() {
       <div className="p-4 border-t space-x-2 border-gray-200">
         <div className="flex items-center gap-1">
           <div className="ml-3">
-            <p className="text-sm font-medium text-gray-800">{profile.name? profile.name : "John Doe"}</p>
-            <p className="text-xs text-gray-500">{profile.email? profile.email: "johndoe@gmail.com"}</p>
+            <p className="text-sm font-medium text-gray-800">
+              {profile.name ? profile.name : "John Doe"}
+            </p>
+            <p className="text-xs text-gray-500">
+              {profile.email ? profile.email : "johndoe@gmail.com"}
+            </p>
           </div>
-          <LogOut className="ml-auto text-gray-500 cursor-pointer" onClick={handleLogout}/>
+          <LogOut
+            className="ml-auto text-gray-500 cursor-pointer"
+            onClick={handleLogout}
+          />
         </div>
       </div>
     </aside>
