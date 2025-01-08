@@ -1,16 +1,18 @@
-import { ProtectedRoute } from "../ui/AuthRoute";
+import { ProtectedRoute, JwtExpiredRoute } from "../ui/AuthRoute";
 import Sidebar from "./Sidebar";
 import { Outlet } from "react-router";
 
 export default function Layout() {
   return (
     <ProtectedRoute>
-      <div>
+      <JwtExpiredRoute>
         <div>
-          <Sidebar />
-          <Outlet />
+          <div>
+            <Sidebar />
+            <Outlet />
+          </div>
         </div>
-      </div>
+      </JwtExpiredRoute>
     </ProtectedRoute>
   );
 }
