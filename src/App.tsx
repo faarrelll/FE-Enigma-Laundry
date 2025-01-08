@@ -7,6 +7,8 @@ import Order from "./pages/Order";
 import CreateOrder from "./pages/Order/CreateOrder";
 import AuthPage from "./pages/AuthPage";
 import { PublicRoute } from "./components/ui/AuthRoute";
+import User from "./pages/User";
+import DetailOrder from "./pages/Order/DetailOrder";
 
 function App() {
   return (
@@ -16,6 +18,9 @@ function App() {
         <Route path="/products" element={<Product />} />
         <Route path="/customers" element={<Customer />} />
         <Route path="/orders" element={<Order />} />
+        <Route path="/orders/create" element={<CreateOrder />} />
+        <Route path="/orders/:id" element={<DetailOrder />} />
+        <Route path="/users" element={<User />} />
       </Route>
 
       <Route
