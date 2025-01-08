@@ -1,4 +1,3 @@
-
 import { Routes, Route } from "react-router";
 import Layout from "./components/layouts/Layout";
 import Dashboard from "./pages/Dashboard";
@@ -23,6 +22,7 @@ function App() {
           <Route path="/orders/create" element={<CreateOrder />} />
           <Route path="/orders/:id" element={<DetailOrder />} />
         </Route>
+        <Route path="/auth" element={<AuthPage />} />
       </Routes>
     </>
   );
